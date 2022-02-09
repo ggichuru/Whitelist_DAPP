@@ -22,11 +22,11 @@ contract Whitelist {
     function addAddressToWhitelist() public {
         require(
             !whitelistedAddresses[msg.sender],
-            "Sender has already been whitelisted"
+            "Sender already whitelisted"
         );
         require(
             numAddressesWhitelisted < maxWhitelistedAddresses,
-            "LIMIT REACHED! (more addresses cannot be added)"
+            "WHITELIST LIMIT REACHED!"
         );
 
         // Add user address which called the function to the whitelistedAddresses array
